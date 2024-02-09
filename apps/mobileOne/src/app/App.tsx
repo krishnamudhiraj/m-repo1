@@ -1,12 +1,14 @@
 import React from 'react';
-import CounterComponent from './features/CounterComponent';
+import { Text } from 'react-native';
 import { Provider } from 'react-redux';
 import { store } from '@m-repo1/store';
+import Routes from './routes';
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <CounterComponent />
+      {/* <Text>HI</Text> */}
+      <Routes />
     </Provider>
   );
 };
