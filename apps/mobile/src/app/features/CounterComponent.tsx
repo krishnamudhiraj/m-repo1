@@ -37,7 +37,7 @@ export const CounterComponent = () => {
       <SafeAreaView />
       <View style={styles.container}>
         {renderButton('-')}
-        <Text style={styles.counterTxt}>{counterValue}</Text>
+        <Text style={styles.counterTxt}>child App Count: {counterValue}</Text>
         {renderButton('+')}
       </View>
     </>

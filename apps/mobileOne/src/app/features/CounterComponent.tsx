@@ -15,16 +15,18 @@ export const CounterComponent = () => {
     (state: RootState) => state.counterReducer.counterValue
   );
 
+  const countValur = (operation) => {
+    dispatch(
+      updateCounter(operation === '+' ? counterValue + 1 : counterValue - 1)
+    );
+  };
+
   const renderButton = (operation: '+' | '-') => {
     return (
       <TouchableOpacity
         style={styles.btnBg}
         onPress={() => {
-          dispatch(
-            updateCounter(
-              operation === '+' ? counterValue + 1 : counterValue - 1
-            )
-          );
+          countValur(operation);
         }}
       >
         <Text style={styles.btnTxt}>{operation}</Text>
@@ -37,7 +39,7 @@ export const CounterComponent = () => {
       <SafeAreaView />
       <View style={styles.container}>
         {renderButton('-')}
-        <Text style={styles.counterTxt}>Count:{counterValue}</Text>
+        <Text style={styles.counterTxt}>Parent App Count:{counterValue}</Text>
         {renderButton('+')}
       </View>
     </>
